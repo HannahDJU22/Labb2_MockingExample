@@ -1,6 +1,12 @@
 package com.example;
 
-import org.junit.Before;
+//dela upp testerna i ett test för Mockito och ett separat för Stub utan Mockito
+//skapa stub-klasser av båda interfacen till testet utan MOckito
+//skapa samma test på hela PayEmpployees för båda testerna
+//sen testa att skriva ett test för min bankservice pay 1 av 2
+
+//tips till framtida kurser att tex Sano är med första riktiga lektion, behövs inte med Ulf så klart
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -15,22 +21,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class EmployeeManagerTest {
+public class EmployeeManagerTestMockito {
 
     public BankService bankServiceMock;
     public EmployeeRepository employeeRepositoryMock;
     public EmployeeManager employeeManager;
-    public List<Employee> employees = new ArrayList<>();
+    public List<Employee> employees;
 
     @BeforeAll
-
     public void setUp(){
-        bankServiceMock= mock(BankService.class);
+        bankServiceMock = mock(BankService.class);
         employeeRepositoryMock = mock(EmployeeRepository.class);
         employeeManager = new EmployeeManager(employeeRepositoryMock, bankServiceMock);
+        employees = new ArrayList<>();
     }
     @Test
-    public void testPayEmployees(){
+    public void testPayEmployeesShouldRunSuccessfully(){
         employees.add(new Employee("1", 200));
         employees.add(new Employee("2", 200));
         employees.add(new Employee("77", 40000));
@@ -39,6 +45,22 @@ public class EmployeeManagerTest {
         when(employeeRepositoryMock.findAll()).thenReturn(employees);
 
         assertEquals(4, employeeManager.payEmployees());
+
+    }
+    @Test
+    public void testBankServicePay(){
+        employees.add(new Employee("13", 30000));
+        employees.add(new Employee("15", 35000));
+
+        employees.get(0).setPaid(true);
+        employees.get(1).setPaid(false);
+
+       employeeManager.payEmployees();
+
+        assertEquals(0, employeeManager.payEmployees());
+
+
+
 
     }
 
