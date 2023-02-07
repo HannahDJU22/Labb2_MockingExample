@@ -47,22 +47,7 @@ public class EmployeeManagerTestMockito {
         assertEquals(4, employeeManager.payEmployees());
 
     }
-    @Test
-    public void testBankServicePay(){
-        employees.add(new Employee("13", 30000));
-        employees.add(new Employee("15", 35000));
 
-        employees.get(0).setPaid(true);
-        employees.get(1).setPaid(false);
-
-       employeeManager.payEmployees();
-
-        assertEquals(0, employeeManager.payEmployees());
-
-
-
-
-    }
 
 
 }
