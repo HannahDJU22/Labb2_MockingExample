@@ -4,12 +4,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TDDCalculatorTest {
+    TDDCalc calc = new TDDCalc();
 
     @Test
     public void testAddingTwoNumbers(){
-        TDDCalc calc = new TDDCalc();
-
-    assertEquals(10, calc.addingTwoNumbers(6, 4));
+    assertEquals(33, calc.addingFiveNumbers(6, 4, 3, 8, 12));
 
     }
 }

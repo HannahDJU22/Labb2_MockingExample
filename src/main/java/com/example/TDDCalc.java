@@ -1,7 +1,7 @@
 package com.example;
 
 public class TDDCalc {
-    public int addingTwoNumbers(int a, int b) {
-        return a + b;
+    public int addingFiveNumbers(int a, int b, int c, int d, int e) {
+        return a + b + c + d + e;
     }
 }
