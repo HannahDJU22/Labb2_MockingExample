@@ -15,4 +15,9 @@ public class TDDCalculatorTest {
     public void AddingNumbersWithIncorrectTypeSHouldFail(){
         assertEquals(10, calc.add(6, 4L));
     }*/
+
+    @Test
+    public void AddingSeveralNUmbersShouldWork(){
+        assertEquals(20, calc.add(5, 5, 3, 7));
+    }
 }
