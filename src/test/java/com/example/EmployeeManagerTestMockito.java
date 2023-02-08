@@ -1,11 +1,5 @@
 package com.example;
 
-//dela upp testerna i ett test för Mockito och ett separat för Stub utan Mockito
-//skapa stub-klasser av båda interfacen till testet utan MOckito
-//skapa samma test på hela PayEmpployees för båda testerna
-//sen testa att skriva ett test för min bankservice pay 1 av 2
-
-//tips till framtida kurser att tex Sano är med första riktiga lektion, behövs inte med Ulf så klart
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

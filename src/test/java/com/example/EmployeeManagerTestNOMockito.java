@@ -21,11 +21,8 @@ public class EmployeeManagerTestNOMockito {
     public void setUp(){
         bankServiceStub = new BankServiceStub();
         employeeRepositoryStub = new EmployeeRepositoryStub();
-        //employeeManager = new EmployeeManager(employeeRepositoryStub, bankServiceStub);
         employees = new ArrayList<>();
 
-        //employees.add(new Employee("13", 30000));
-       // employees.add(new Employee("15", 40000));
     }
 
     @Test
@@ -34,7 +31,7 @@ public class EmployeeManagerTestNOMockito {
         //employees.get(0).setPaid(true);
         //employees.get(1).setPaid(true);
 
-        EmployeeManager employeeManager = new EmployeeManager(employeeRepositoryStub, bankServiceStub);
+        employeeManager = new EmployeeManager(employeeRepositoryStub, bankServiceStub);
         assertEquals(2, employeeManager.payEmployees());
 
 
