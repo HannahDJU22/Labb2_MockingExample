@@ -7,7 +7,11 @@ public class TDDCalculatorTest {
     TDDCalc calc = new TDDCalc();
 
     @Test
-    public void testAddingNumbers(){
-
+    public void AddingNumbersShouldWork(){
+        assertEquals(10, calc.add(5, 5));
+    }
+    @Test
+    public void AddingNumbersWithIncorrectTypeSHouldFail(){
+        assertEquals(10, calc.add(6, 4L));
     }
 }
