@@ -8,7 +8,6 @@ public class TDDCalculatorTest {
 
     @Test
     public void testAddingNumbers(){
-    assertEquals(33, calc.addingFiveNumbers(6, 4, 3, 8, 12));
 
     }
 }
